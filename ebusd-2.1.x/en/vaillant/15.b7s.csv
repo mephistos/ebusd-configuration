@@ -1,1 +1,36 @@
-15.b7v.csv
+# type (r[1-9];w;u),circuit,name,[comment],[QQ],ZZ,PBSB,[ID],field1,part (m/s),datatypes/templates,divider/values,unit,comment
+#,70000,VRC 700,700 110,,,,,,,,,,
+# ##### Generell #####,,,,,,,,,,,,,
+*r,,,,,,B524,02000000,,,IGN:4,,,
+*w,,,,,,B524,02010000,,,,,,
+*wi,#install,,,,,B524,02010000,,,,,,
+r;w,,HolidayTemp,holiday temperature,,,,8200,,,tempv,,,holiday setpoint
+r;w,,HwcMaxFlowTempDesired,hwc max flow temp desired,,,,4600,,,tempv,,,maximum flow temperature setpoint of Hwc
+r;w,,OpMode,operation mode,,,,7b00,,,opmode,,,operation mode of all/configured zone(s) matching OpModeEffect
+r;w,,OpModeEffect,op mode effect,,,,6900,,,zonesel,,,selection which heating circuit is affected by changing parameters in the basic display
+r;w,,SFMode,SF mode,,,,7400,,,sfmode,,,
+r,,DisplayedOutsideTemp,outside temperature,,,,7300,,,tempv,,,Außentemperatur
+# ##### hot water circuit #####,,,,,,,,,,,,,
+*r,,,,,,B524,02000100,,,IGN:4,,,
+*w,,,,,,B524,02010100,,,,,,
+r;w,,HwcOpMode,hwc operation mode,,,,0300,,,opmode,,,operation mode of Hwc
+r;w,,HwcSFMode,hwc SF mode,,,,0D00,,,sfmode,,,
+r;w,,HwcTempDesired,hwc temperature desired,,,,0400,,,tempv,,,setpoint of domestic hot water circuit
+r,,HwcStorageTemp,hwc storage temperature,,,,0500,,,tempv,,,Speicheristtemperatur
+r,,HwcFlowTemp,hwc flow temperature,,,,0800,,,tempv,,,desired flow temp for Hwc
+# ##### zone 2 #####,,,,,,,,,,,,,
+*r,,,,,,B524,02000301,,,IGN:4,,,
+*w,,,,,,B524,02010301,,,,,,
+r;w,,z2ActualRoomTempDesired,room temperature desired zone 2,,,,1400,,,tempv,,,current room setpoint considering all basic conditions passed to the control algorithms
+r;w,,z2NightTemp,night temperature zone 2,,,,0900,,,tempv,,,night setpoint for zone 2
+r;w,,z2OpMode,operation mode zone 2,,,,0600,,,opmode,,,operation mode of zone 2
+r;w,,z2QuickVetoTemp,quick veto temperature zone 2,,,,0800,,,tempv,,,manual override setpoint for zone 2
+r;w,,z2SFMode,SF mode zone 2,,,,0E00,,,sfmode,,,
+r;w,,z2ValveStatus,valve status zone 2,,,,1200,,,UCH,,,valve status of zone 2
+r,,z2RoomTemp,room temperature zone 2,,,,0F00,,,tempv,,,current room temperature in zone 2
+# ##### heating circuit 1 #####,,,,,,,,,,,,,
+*r,,,,,,B524,02000200,,,IGN:4,,,
+*w,,,,,,B524,02010200,,,,,,
+r;w,,Hc1Status,Status heating circuit 1,,,,1B00,,,UCH,,,status of zone 1
+r,,Hc1FlowTemp,FlowTemp heating circuit 1,,,,0800,,,tempv,,,current flow temperature of Hc1
+r,,Hc1ActualFlowTempDesired,ActualFlowTempDesired heating circuit 1,,,,0700,,,tempv,,,current flow temperature setpoint of Hc1
